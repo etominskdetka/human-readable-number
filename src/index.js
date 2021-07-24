@@ -27,7 +27,7 @@ module.exports = function toReadable(number) {
         "",
         "twenty",
         "thirty",
-        "fourty",
+        "forty",
         "fifty",
         "sixty",
         "seventy",
