@@ -1,7 +1,6 @@
 module.exports = function toReadable(number) {
-    let str = "";
-
-    let num1 = [
+    
+  let units = [
         "zero",
         "one",
         "two",
@@ -13,21 +12,21 @@ module.exports = function toReadable(number) {
         "eight",
         "nine",
         "ten",
-        "eleven ",
-        "twelve ",
-        "thirteen  ",
-        "fourteen ",
-        "fifteen ",
-        "sixteen ",
-        "seventeen ",
-        "eighteen ",
-        "nineteen ",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
     ];
 
-    let num2 = [
+    let dozens = [
         "twenty",
         "thirty",
-        "forty",
+        "fourty",
         "fifty",
         "sixty",
         "seventy",
@@ -35,13 +34,21 @@ module.exports = function toReadable(number) {
         "ninety",
     ];
 
-    let num3 = "hundred";
+    let hundreds = "hundred";
 
-    if (typeof number !== "number" || number < 0 || number > 1000) {
-        throw new Error("Enter a number between null and one thousand");
+    if (typeof(number) !== 'number' || number < 0 || number > 1000) {
+      throw new Error('Enter a number between null and one thousand');
     }
 
     if (number < 20) {
-        str = num1[number];
+        return units[number];
+    } 
+
+    if (number < 100) {
+
+    }
+
+    if (number < 1000) {
+
     }
 };
