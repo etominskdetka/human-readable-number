@@ -1,6 +1,5 @@
 module.exports = function toReadable(number) {
-    
-  let units = [
+    let units = [
         "zero",
         "one",
         "two",
@@ -24,6 +23,8 @@ module.exports = function toReadable(number) {
     ];
 
     let dozens = [
+        "",
+        "",
         "twenty",
         "thirty",
         "fourty",
@@ -36,19 +37,24 @@ module.exports = function toReadable(number) {
 
     let hundreds = "hundred";
 
-    if (typeof(number) !== 'number' || number < 0 || number > 1000) {
-      throw new Error('Enter a number between null and one thousand');
+    if (typeof number !== "number" || number < 0 || number > 1000) {
+        throw new Error("Enter a number between null and one thousand");
     }
 
     if (number < 20) {
         return units[number];
-    } 
+    }
 
     if (number < 100) {
-
+        let dozRez = dozens[Math.floor(number / 10)];
+        let uniRez = units[number % 10];
+        if (number % 10 !== 0) {
+            return dozRez + " " + uniRez;
+        } else {
+            return dozRez;
+        }
     }
 
     if (number < 1000) {
-
     }
 };
